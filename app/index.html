@@ -13,15 +13,50 @@
 
 <div data-role="page">
 
-	<div data-role="header">
-		<h1>Stash</h1>
-	</div><!-- /header -->
-
+	<div data-role="header" data-position="fixed" id="header">
+		<div class='logo'><img src='images/logo.png'/></div>
+		<h1>STASH</h1>
+		<img src="images/sefi.gif" id='profile-pic'>
+		
+		
+		<div data-role="navbar">
+			<ul>
+				<li><a href="a.html" class="ui-btn-active ui-state-persist">Feed</a></li>
+				<li><a href="b.html">Your Stash</a></li>
+				
+			</ul>
+		</div><!-- /navbar -->
+	</div>
 	<div data-role="content">	
-		<p>Hello world</p>		
+		<ul data-role="listview" data-filter="true" data-shadow="false" data-filter-placeholder="" id="feed" >
+			<li><a href="index.html">
+					<img src="images/sefi.gif">
+					<p class='feed-item-head'><span class='name'>Sefi Grossman</span> added an item.<p>
+					<p><strong>Macbook Pro 17"</strong></p>
+				</a>					
+			</li>
+			<li><a href="index.html">
+					<img src="images/chaz.gif">
+					<p class='feed-item-head'><span class='name'>Charles Johnson</span> purchased an item.<p>
+					<p><strong>Austin Martin</strong></p>
+				</a>					
+			</li>
+			<li><a href="index.html">
+					<img src="images/aaron.gif">
+					<p class='feed-item-head'><span class='name'>Sefi Grossman</span> added an item.<p>
+					<p><strong>iPhone 5</strong></p>
+				</a>					
+			</li>
+		</ul>	
 	</div><!-- /content -->
-
+	<div data-role="footer" data-id="footer" data-position="fixed" class="ui-bar">
+		<div data-role="controlgroup" data-type="horizontal" data-mini="true" align="center">
+			<button href="index.html" data-icon="plus">Add</button>
+			<button href="index.html" data-icon="gear" >Settings</button>
+		</div>
+	</div>
 </div><!-- /page -->
+
 
 
 </body>

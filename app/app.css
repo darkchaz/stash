@@ -1,0 +1,59 @@
+/* Header */
+
+#header .logo{
+	height: 30px;
+	float: left;
+	margin: 5px 10px 0 15px;
+}
+
+#header h1{
+	text-align: left;
+	margin: 5px 0 10px 25px;
+	font-family: monospace;
+	font-size: 24px;
+	font-style: italic
+}
+
+#header .logo img{
+	height: 100%;
+	
+}
+
+#profile-pic{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 35px;
+	top: 10px;
+	
+}
+
+/* Feed */
+#search{
+	position: absolute;
+	right: 15px;
+}
+
+#feed li img{
+	
+	margin: 7px;
+	width: 40px; 
+	height: 40px;
+}
+
+#feed li a{
+	
+	padding-left: 55px;
+	padding-top: 15px;
+	min-height: 20px
+}
+
+.feed-item-head{
+	color: gray;
+}
+
+.feed-item-head .name{
+	color: #3b5990;
+	font-weight: bold;
+}
+
