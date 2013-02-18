@@ -19,11 +19,10 @@
 		<img src="images/sefi.gif" id='profile-pic'>
 		
 		
-		<div data-role="navbar">
+		<div data-role="navbar" data-iconpos="right">
 			<ul>
-				<li><a href="a.html" class="ui-btn-active ui-state-persist">Feed</a></li>
-				<li><a href="b.html">Your Stash</a></li>
-				
+				<li><a href="a.html" data-icon="arrow-d" class="ui-btn-active ui-state-persist">Feed</a></li>
+				<li><a href="b.html" data-icon="grid" >Your Stash</a></li>
 			</ul>
 		</div><!-- /navbar -->
 	</div>
@@ -31,21 +30,32 @@
 		<ul data-role="listview" data-filter="true" data-shadow="false" data-filter-placeholder="" id="feed" >
 			<li><a href="index.html">
 					<img src="images/sefi.gif">
-					<p class='feed-item-head'><span class='name'>Sefi Grossman</span> added an item.<p>
-					<p><strong>Macbook Pro 17"</strong></p>
-				</a>					
+					<p class='feed-item-head'><span class='name'>Sefi Grossman</span> added 2 items<p>
+					<p><strong>Apple Macbook Pro 17", Apple 27" LED Cinema Display</strong></p>
+				</a>			
+				<div  class='gallery'>
+					<img src='images/mbp17.jpeg'/>
+					<img src='images/27LED.jpg'/>
+				</div>
 			</li>
 			<li><a href="index.html">
 					<img src="images/chaz.gif">
-					<p class='feed-item-head'><span class='name'>Charles Johnson</span> purchased an item.<p>
-					<p><strong>Austin Martin</strong></p>
-				</a>					
+					<p class='feed-item-head'><span class='name'>Charles Johnson</span> purchased an item<p>
+					<p><strong>Aston Martin DB9</strong></p>
+					
+				</a>		
+					<div class="gallery">
+						<img src='images/db9.jpeg'/>	
+					</div>		
 			</li>
 			<li><a href="index.html">
 					<img src="images/aaron.gif">
-					<p class='feed-item-head'><span class='name'>Sefi Grossman</span> added an item.<p>
+					<p class='feed-item-head'><span class='name'>Aaron Smith</span> added an item<p>
 					<p><strong>iPhone 5</strong></p>
 				</a>					
+				<div class="gallery">
+						<img src='images/iphone5.jpeg'/>	
+					</div>	
 			</li>
 		</ul>	
 	</div><!-- /content -->
