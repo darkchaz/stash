@@ -1,8 +1,30 @@
 var feed = {
 	data: [],
 	templates: ["item"],
-	getData: function(){
-		this.data = testdata();
+	itemTemplate: null,
+	loadTemplate: function(){
+		$.ajax({
+		  url: 'http://stash/app/feedItemTemplate.html',
+		  success: function (html) { 
+		    console.log('Template Loaded:', html);
+		  	feed.itemTemplate = html;
+		  	feed.loadData();
+		  	
+		  },
+		});
+		
+	},
+	loadData: function(){
+		$.ajax({
+		  dataType: 'jsonp',
+		  data: '',
+		  jsonpCallback: 'callback',
+		  url: 'http://stash/app/feed.json',
+		  success: function (data) {
+		  	console.log("Data Loaded:", data);
+		    feed.output(data);
+		  },
+		});
 	},
 	init: function(){ //go get templates from div id = templates
 		var that = this;
@@ -11,58 +33,26 @@ var feed = {
 		});
 		this.getData();
 		this.output();
-	}
-	output: function(){
-		for (var i = 0; i<this.data.length; i++){
+	},
+	output: function(data){
+		for (var i = 0; i<data.length; i++){
+			var post = data[i];
+			var template = feed.itemTemplate;
+			template = template.replace("{userName}", post.name);
+			template = template.replace("{action}", post.action);
+			template = template.replace("{profilePic}", post.profilePic);
+			console.log(template);
+			console.log(post.name);
+			
+			$("#feed").append(template).listview('refresh');
 			
 		}
-	},	
+	}	
 }
 
 
-function testdata{
-	return [
-		{
-			id: "1",
-			name: "Sefi Grossman",
-			action: "added 2 items",
-			items: [
-				{
-					name: "Apple Macbook Pro 17",
-					img: "mbp17.jpg"
-				},
-				{
-					name: "Apple 27\" LED Cinema",
-					img: "27LED.jpg"
-				}
-			]	
-		},
-		{
-			id: "2"
-			name: "Charles Johnson",
-			action: "added purchased item",
-			items: [
-				{
-					name: "Aston Martin DB9",
-					img: "db9.jpg"
-				}
-			]
-		},
-		{
-			id: "3"
-			name: "Aaron Smith",
-			action: "added an item",
-			items: [
-				{
-					name: "Apple iPhone 5",
-					img: "iPhone.jpg"
-				}
-			]
-		}
-	]
-	
-}
+
 
 $(function(){
-	
+	feed.loadTemplate();
 });
