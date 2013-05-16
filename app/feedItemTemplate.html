@@ -2,11 +2,129 @@
 	<a href="index.html">
 		<img src="images/{profilePic}">
 		<p class='feed-item-head'>
-			<span class='name'>{userName}</span> {action}<p>
-		<p><strong>{itemNames}</strong></p>
+			<span class='name'>{userDisplayName}</span> {action}<p>
+		<p><strong>
+			[items type='array' delimiter=', ' html=<span>[itemName]</span>[attributes type='array' html[attribute <br>]]]
+			[attributes]
+		</strong></p>
 	</a>			
 	<div  class='gallery'>
-		{images}
+		{items}<div><img src="{itemImg}" alt="{itemName}"/></div>
 	</div>
 </li>
 		
+		
+<template array="posts">	
+	<li>
+		<a href="index.html">
+			<img src="images/[profilePic]">
+			<p class='feed-item-head'>
+				<span class='name'>[userDisplayName]</span> [action]
+			</p>
+				<strong>
+					<template array="posts.items" delimiter=", ">[itemName]</template>
+				</strong>
+			</p>
+		</a>			
+		<div class='gallery'>
+			<template array="posts.items"><img src="[itemImg]" alt="[itemName]"/></template>
+		</div>
+	</li>	
+</template>
+	
+
+
+		
+template
+var output;
+
+if($("array", template).size() > 0){
+	each(data, function(){
+		instance = template.clone();
+		processArray(instance)
+	}
+}
+
+search/replace all []
+
+	
+		
+processArray(html, class){
+    $.each($("root").children("array"), function(i,obj){
+       var subHTML = obj.html();
+        if($("array", $(subHTML).size() > 0){
+            subHTML = processArray(subHTML, class + "." + obj.attr("class"));    
+        }
+           
+        
+        class
+        search/replace loop object
+        
+        return html
+    });
+}
+
+
+		
+		
+		
+		
+		
+		
+		
+var template = $("<li>....</li>") 
+
+
+
+
+
+1) Process Arrays
+	a) more arrays
+	b) strings
+2) Strings
+
+function processArray(html){
+	$html = $(html);
+	$("array>topmost")
+}
+
+
+
+
+instance = template.clone();
+
+items typeof(array)?
+
+	$.each($("array." + items, instance), function(i, obj){
+		
+		
+		
+		
+		
+	});
+		if($(this).attr("delimeter")){
+			return array.join($(this).attr("delimeter"))
+		}
+		
+		
+		
+found items - is array true
+
+Find all array tags and create array
+
+tempArray = Array(2);
+
+Loop items{
+	isObject?{
+		for each prop of items[i]
+			ifString?{replace 
+				loop through tempArray
+				// items[i].itemName replace {itemName}
+			
+			}
+	}
+	
+}
+
+
+function

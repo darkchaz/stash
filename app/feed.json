@@ -1,4 +1,4 @@
-callback(
+callback({"posts":
 	[
 		{
 			"id": "1",
@@ -7,12 +7,12 @@ callback(
 			"profilePic": "sefi.gif",
 			"items": [
 				{
-					"name": "Apple Macbook Pro 17",
-					"img": "mbp17.jpg"
+					"itemName": "Apple Macbook Pro 17",
+					"itemImg": "mbp17.jpg"
 				},
 				{
-					"name": "Apple 27\" LED Cinema",
-					"img": "27LED.jpg"
+					"itemName": "Apple 27\" LED Cinema",
+					"itemImg": "27LED.jpg"
 				}
 			]	
 		},
@@ -41,4 +41,4 @@ callback(
 			]
 		}
 	]
-);
+});
