@@ -1,0 +1,8 @@
+<h2>Your Friends</h2>
+<ul>
+  <li ng-repeat="contact in contacts">
+    <a href="#/contacts/{{contact.id}}">{{contact.name}}</a>
+  </li>
+</ul>    
+
+<div class="span9" ui-view="contact-details" ng-animate="{enter:'fade-enter'}"></div>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" ng-app="stashapp">
+
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"> 
+<link rel="stylesheet" type="text/css" href="assets/css/main.css"> 
+<script src="assets/js/angular-1.1.4.js"></script>
+<script src="assets/js/angular-ui-router.js"></script>
+
+<title ng-bind="'Stash - ' + $state.current.name">Stash</title>
+</head>
+
+<body>
+<div id="nav-header" class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<p class="nav-header-left navbar-text pull-left" ui-view="nav-header-left"></p>
+			<ul class="nav">
+				<li ng-class="{ active: $state.includes('contacts') }"><a href="#/contacts" class="icons-user">&nbsp;&nbsp;&nbsp;</a></li>
+				<li ng-class="{ active: $state.includes('notifications') }"><a href="#/notifications" class="icons-mail">&nbsp;&nbsp;&nbsp;</a></li>
+			</ul>
+			<p class="nav-header-right navbar-text pull-right" ui-view="nav-header-right"></p>
+		</div>
+	</div>
+</div>
+
+<div id="content" class="container" ui-view ng-animate="{enter:'fade-enter'}"></div>
+
+<div id="nav-footer" class="navbar navbar-fixed-bottom">
+	<div class="navbar-inner">
+		<div class="container">
+			<ul class="nav">
+				<li ng-class="{ active: $state.includes('home') }"><a href="#/" class="icons-home">&nbsp;</a></li>
+				<li ng-class="{ active: $state.includes('stash') }"><a href="#/stash" class="icons-box">&nbsp;</a></li>
+				<li ng-class="{ active: $state.includes('add') }"><a href="#/add" class="icons-add">&nbsp;</a></li>
+				<li ng-class="{ active: $state.includes('search') }"><a href="#/search" class="icons-search">&nbsp;</a></li>
+				<li ng-class="{ active: $state.includes('more') }"><a href="#/more" class="icons-more">&nbsp;</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<pre>
+  $state = {{$state.current.name}}
+  $stateParams = {{$stateParams}}
+</pre>
+
+</body>
+
+<script src="assets/js/application.js"></script>
+
+</html>
