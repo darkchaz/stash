@@ -16,9 +16,10 @@
 	<div class="navbar-inner">
 		<div class="container">
 			<p class="nav-header-left navbar-text pull-left" ui-view="nav-header-left"></p>
+			<a href="#/" class="logo"></a>
 			<ul class="nav">
-				<li ng-class="{ active: $state.includes('contacts') }"><a href="#/contacts" class="icons-user">&nbsp;&nbsp;&nbsp;</a></li>
-				<li ng-class="{ active: $state.includes('notifications') }"><a href="#/notifications" class="icons-mail">&nbsp;&nbsp;&nbsp;</a></li>
+				<li ng-class="{ active: $state.includes('contacts') }"><a href="#/contacts" class="icons-user"></a></li>
+				<li ng-class="{ active: $state.includes('notifications') }"><a href="#/notifications" class="icons-mail"><span class="notification-badge">3</span></a></li>
 			</ul>
 			<p class="nav-header-right navbar-text pull-right" ui-view="nav-header-right"></p>
 		</div>
@@ -31,19 +32,17 @@
 	<div class="navbar-inner">
 		<div class="container">
 			<ul class="nav">
-				<li ng-class="{ active: $state.includes('home') }"><a href="#/" class="icons-home">&nbsp;</a></li>
-				<li ng-class="{ active: $state.includes('stash') }"><a href="#/stash" class="icons-box">&nbsp;</a></li>
-				<li ng-class="{ active: $state.includes('add') }"><a href="#/add" class="icons-add">&nbsp;</a></li>
-				<li ng-class="{ active: $state.includes('search') }"><a href="#/search" class="icons-search">&nbsp;</a></li>
-				<li ng-class="{ active: $state.includes('more') }"><a href="#/more" class="icons-more">&nbsp;</a></li>
+				<li ng-class="{ active: $state.includes('home') }"><a href="#/" class="icons-home"></a></li>
+				<li ng-class="{ active: $state.includes('stash') }"><a href="#/stash" class="icons-box"></a></li>
+				<li ng-class="{ active: $state.includes('add') }"><a href="#/add" class="icons-add"></a></li>
+				<li ng-class="{ active: $state.includes('search') }"><a href="#/search" class="icons-search"></a></li>
+				<li ng-class="{ active: $state.includes('more') }"><a href="#/more" class="icons-more"></a></li>
 			</ul>
 		</div>
 	</div>
 </div>
 
-<hr>
-
-<pre>
+<pre style="display:none;">
   $state = {{$state.current.name}}
   $stateParams = {{$stateParams}}
 </pre>

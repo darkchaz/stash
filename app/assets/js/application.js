@@ -12,10 +12,10 @@ angular.module('stashapp', ['ui.compat'])
 	$routeProvider
 		.when('/user/:id', {
 			redirectTo: '/contacts/:id',
-		})
-		.when('/', {
-			template: 'This is the homepage',
 		});
+		//.when('/', {
+		//	template: 'This is the homepage',
+		//});
 
 	// STATE PROVIDER
 	$stateProvider
@@ -51,49 +51,50 @@ angular.module('stashapp', ['ui.compat'])
 						console.log(response);
 						$scope.contacts = response.data;
 					});
+
+					/*
+					alert($state.current.name);
+					if ($state.current.name === 'contacts.list') {
+						$scope.transitionAnimation = 'slideLeft';
+					}
+					*/
+
+
 			}],
 		})
+
+		// Initial Contacts page
         .state('contacts.list', {
-          // parent: 'contacts',
           url: '',
           templateUrl: 'contacts.list.html',
         })
-
+		
         // Contacts Detail
         .state('contacts.detail', {
-          // parent: 'contacts',
-          url: '/{contactId}',
-          resolve: {
-            something:
-              [        '$timeout', '$stateParams',
-              function ($timeout,   $stateParams) {
-                return $timeout(function () { return "Asynchronously resolved data (" + $stateParams.contactId + ")" }, 10);
-              }],
-          },
+			url: '/{contactId}',
+			resolve: {
+				resolved_status_id:
+					[        '$timeout', '$stateParams',
+					function ($timeout,   $stateParams) {
+						return $timeout(function () { return "Asynchronously resolved data (" + $stateParams.contactId + ")" }, 10);
+					}],
+			},
+
           views: {
             '': {
               templateUrl: 'contacts.detail.html',
               controller:
-                [        '$scope', '$stateParams', 'something',
-                function ($scope,   $stateParams,   something) {
-                  $scope.something = something;
+                [        '$scope', '$stateParams', 'resolved_status_id',
+                function ($scope,   $stateParams,   resolved_status_id) {
+                  $scope.status_id = resolved_status_id;
                   $scope.contact = findById($scope.contacts, $stateParams.contactId);
                 }],
             },
             'nav-header-left@': {
               template: '<a href="./#/contacts" class="icons-back"></a>',
             },
-            'menu': {
-              templateProvider:
-                [ '$stateParams',
-                function ($stateParams){
-                  // This is just to demonstrate that $stateParams injection works for templateProvider
-                  // $stateParams are the parameters for the new state we're transitioning to, even
-                  // though the global '$stateParams' has not been updated yet.
-                  return '<hr><small class="muted">Contact ID: ' + $stateParams.contactId + '</small>';
-                }],
-            },
           },
+
         })
 
 		// Contacts Detail for Items
@@ -142,6 +143,7 @@ angular.module('stashapp', ['ui.compat'])
 		 */
 		.state('home', {
 			url: '/',
+			templateUrl: 'home.html',
 		})
 
 		/**
