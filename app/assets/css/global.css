@@ -96,80 +96,79 @@
 
 /* line 89, ../scss/global.scss */
 .icons-mail {
-  background-image: url("../icons/mail_grey_dark.png");
+  background-image: url("../img/mail_grey_dark.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 /* line 94, ../scss/global.scss */
 .icons-user {
-  background-image: url("../icons/user_grey_dark.png");
+  background-image: url("../img/user_grey_dark.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 /* line 99, ../scss/global.scss */
 .icons-home {
-  background-image: url("../icons/home_grey_dark.png");
+  background-image: url("../img/home_grey_dark.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 /* line 104, ../scss/global.scss */
 .icons-box {
-  background-image: url("../icons/box_grey_dark.png");
+  background-image: url("../img/box_grey_dark.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 /* line 109, ../scss/global.scss */
 .icons-add {
-  background-image: url("../icons/add_grey_dark.png");
+  background-image: url("../img/add_grey_dark.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 /* line 114, ../scss/global.scss */
 .icons-search {
-  background-image: url("../icons/search_grey_dark.png");
+  background-image: url("../img/search_grey_dark.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 /* line 119, ../scss/global.scss */
 .icons-more {
-  background-image: url("../icons/more_grey_dark.png");
+  background-image: url("../img/more_grey_dark.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 /* line 124, ../scss/global.scss */
 .icons-back {
-  background-image: url("../icons/arrow_left_grey_dark.png");
+  background-image: url("../img/arrow_left_grey_dark.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 /* line 129, ../scss/global.scss */
 .icons-forward {
-  background-image: url("../icons/arrow_right_grey_dark.png");
+  background-image: url("../img/arrow_right_grey_dark.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-/* line 137, ../scss/global.scss */
+/* line 136, ../scss/global.scss */
 html,
 body {
-  height: 100%;
   background: #f5f5f5;
 }
 
-/* line 142, ../scss/global.scss */
+/* line 140, ../scss/global.scss */
 #content {
   margin: 44px 4px;
-  width: inherit;
+  width: auto;
 }
-/* line 147, ../scss/global.scss */
+/* line 145, ../scss/global.scss */
 #content ul.nav {
   background: #fff;
 }
