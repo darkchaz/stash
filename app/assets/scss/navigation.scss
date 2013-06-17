@@ -63,10 +63,15 @@
 #nav-footer {
 
     .nav {
+        width:100%;
 
-        li > a {
-            padding: 0px 31px;
-            height:40px;
+        li {
+            width:20%;
+            
+            a {
+                padding: 0px 0px;
+                height:40px;
+            }
         }
     }
 }

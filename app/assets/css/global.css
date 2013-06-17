@@ -164,11 +164,129 @@ body {
 }
 
 /* line 140, ../scss/global.scss */
+hr.clear {
+  border: 0;
+  margin: 0;
+  clear: both;
+}
+
+/* line 146, ../scss/global.scss */
 #content {
-  margin: 44px 4px;
+  margin: 50px 8px;
+  width: auto;
+  font-size: 12px;
+}
+/* line 151, ../scss/global.scss */
+#content .nav-stacked {
   width: auto;
 }
-/* line 145, ../scss/global.scss */
+/* line 155, ../scss/global.scss */
+#content .nav-stacked li .icon-chevron-right {
+  float: right;
+  margin-top: 4px;
+  margin-right: 0px;
+  opacity: .25;
+}
+/* line 164, ../scss/global.scss */
+#content .nav-stacked li.image-thumb .icon-chevron-right {
+  float: right;
+  margin-top: 11px;
+  margin-right: 0px;
+  opacity: .25;
+}
+/* line 171, ../scss/global.scss */
+#content .nav-stacked li.image-thumb img {
+  max-width: 35px;
+  margin-right: 8px;
+  margin-left: -2px;
+  -webkit-border-radius: 4px;
+}
+/* line 181, ../scss/global.scss */
 #content ul.nav {
   background: #fff;
+}
+/* line 185, ../scss/global.scss */
+#content .cbox {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-bottom: 14px;
+}
+/* line 195, ../scss/global.scss */
+#content .cbox .pad {
+  padding: 4px 8px;
+}
+/* line 203, ../scss/global.scss */
+#content .feed-item .header {
+  background-image: linear-gradient(bottom, #f9f9f9 23%, #ffffff 62%);
+  background-image: -o-linear-gradient(bottom, #f9f9f9 23%, white 62%);
+  background-image: -moz-linear-gradient(bottom, #f9f9f9 23%, white 62%);
+  background-image: -webkit-linear-gradient(bottom, #f9f9f9 23%, white 62%);
+  background-image: -ms-linear-gradient(bottom, #f9f9f9 23%, white 62%);
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+  height: 50px;
+  position: relative;
+}
+/* line 214, ../scss/global.scss */
+#content .feed-item .header img.profile-pic {
+  float: left;
+  margin-right: 6px;
+  width: 50px;
+  height: 50px;
+  -webkit-border-top-left-radius: 4px;
+  border-right: 1px solid #f0f0f0;
+}
+/* line 223, ../scss/global.scss */
+#content .feed-item .header .name {
+  position: absolute;
+  top: 5px;
+  left: 60px;
+  font-weight: bold;
+  color: #000;
+  font-size: 13px;
+}
+/* line 232, ../scss/global.scss */
+#content .feed-item .header .action {
+  position: absolute;
+  top: 25px;
+  left: 60px;
+  color: #444;
+}
+/* line 240, ../scss/global.scss */
+#content .feed-item img.item {
+  border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
+  width: 100%;
+}
+/* line 246, ../scss/global.scss */
+#content .feed-item .item-info {
+  padding: 4px 8px;
+}
+/* line 249, ../scss/global.scss */
+#content .feed-item .item-info .name {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+  padding: 4px 0;
+}
+/* line 255, ../scss/global.scss */
+#content .feed-item .item-info .desc {
+  line-height: 14px;
+  color: #888;
+}
+/* line 262, ../scss/global.scss */
+#content .feed-item .btn-group {
+  width: 100%;
+  margin: 3px 0 3px 2px;
+}
+/* line 266, ../scss/global.scss */
+#content .feed-item .btn-group button {
+  font-size: 12px;
+  color: #444;
+  width: 25%;
 }

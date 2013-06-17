@@ -32,6 +32,7 @@ class Api extends CI_Controller {
 			array(
 				'id' => 1,
 				'name' => "Charles Johnson",
+				'profile_pic' => './content/profile/chaz.jpg',
 				'items' => array(
 					array(
 						'id' => 'a',
@@ -46,8 +47,9 @@ class Api extends CI_Controller {
 				),
 			),
 			array(
-				'id' => 33,
+				'id' => 2,
 				'name' => "Seal Goldman",
+				'profile_pic' => './content/profile/sefi.jpg',
 				'items' => array(
 					array(
 						'id' => 'a',
@@ -62,8 +64,9 @@ class Api extends CI_Controller {
 				),
 			),
 			array(
-				'id' => 42,
+				'id' => 3,
 				'name' => "Aaron Smith",
+				'profile_pic' => './content/profile/aaron.jpg',
 				'items' => array(
 					array(
 						'id' => 'a',
@@ -78,8 +81,9 @@ class Api extends CI_Controller {
 				),
 			),
 			array(
-				'id' => 123,
+				'id' => 4,
 				'name' => "James Jackson",
+				'profile_pic' => './assets/img/default.jpg',
 				'items' => array(
 					array(
 						'id' => 'a',
