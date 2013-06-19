@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+         
+        <title>Stash!</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Stash!</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+                
+            </div>
+            <br>
+            	<button onclick="scanit()">Scan</button>
+            	<br>
+            	<div id="output"></div>
+        </div>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script src="barcodescanner.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+            
+            
+            cordova.define("cordova/plugin/BarcodeScanner",
+    
+    function (require, exports, module) {
+
+        var exec = require("cordova/exec");
+
+        var BarcodeScanner = function () {
+        };
+
+        //-------------------------------------------------------------------
+        BarcodeScanner.Encode = {
+            TEXT_TYPE: "TEXT_TYPE",
+            EMAIL_TYPE: "EMAIL_TYPE",
+            PHONE_TYPE: "PHONE_TYPE",
+            SMS_TYPE: "SMS_TYPE",
+            //  CONTACT_TYPE: "CONTACT_TYPE",  // TODO:  not implemented, requires passing a Bundle class from Javascript to Java
+            //  LOCATION_TYPE: "LOCATION_TYPE" // TODO:  not implemented, requires passing a Bundle class from Javascript to Java
+        };
+
+        //-------------------------------------------------------------------
+        BarcodeScanner.prototype.scan = function (successCallback, errorCallback) {
+            if (errorCallback == null) {
+                errorCallback = function () {
+                }
+            }
+
+            if (typeof errorCallback != "function") {
+                console.log("BarcodeScanner.scan failure: failure parameter not a function");
+                return
+            }
+
+            if (typeof successCallback != "function") {
+                console.log("BarcodeScanner.scan failure: success callback parameter must be a function");
+                return
+            }
+
+            exec(successCallback, errorCallback, 'BarcodeScanner', 'scan', []);
+        };
+
+        //-------------------------------------------------------------------
+        BarcodeScanner.prototype.encode = function (type, data, successCallback, errorCallback, options) {
+            if (errorCallback == null) {
+                errorCallback = function () {
+                }
+            }
+
+            if (typeof errorCallback != "function") {
+                console.log("BarcodeScanner.encode failure: failure parameter not a function");
+                return
+            }
+
+            if (typeof successCallback != "function") {
+                console.log("BarcodeScanner.encode failure: success callback parameter must be a function");
+                return
+            }
+
+            exec(successCallback, errorCallback, 'BarcodeScanner', 'encode', [
+                {"type": type, "data": data, "options": options}
+            ]);
+        };
+
+        var barcodeScanner = new BarcodeScanner();
+        module.exports = barcodeScanner;
+    });
+            
+            
+            
+            
+            
+            
+            
+            
+            var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+
+			function scanit(){
+			
+				scanner.scan(
+					
+					function (result) {
+						if(result.cancelled == 0){
+							document.getElementById("output").innerHTML = "<span style='color: green'>" + result.text + "</span>";
+						}
+			
+					}, 
+					function (error) {
+					  	document.getElementById("output").innerHTML = "<span style='color: red'>Scanning failed: " + error + "</span>";
+					}
+			    );
+			
+			}
+
+        </script>
+    </body>
+</html>
