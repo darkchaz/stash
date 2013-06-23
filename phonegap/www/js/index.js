@@ -32,3 +32,21 @@ var app = {
 };
 
 
+var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+
+function scanit(){
+
+	scanner.scan(
+		
+		function (result) {
+			if(result.cancelled == 0){
+				document.getElementById("output").innerHTML = "<span style='color: green'>" + result.text + "</span>";
+			}
+
+		}, 
+		function (error) {
+		  	document.getElementById("output").innerHTML = "<span style='color: red'>Scanning failed: " + error + "</span>";
+		}
+    );
+
+}
