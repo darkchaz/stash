@@ -26,7 +26,6 @@ class Api extends CI_Controller {
 	public function friends()
 	{
 
-
 		// This is sample data for friends
 		$data = array(
 			array(
